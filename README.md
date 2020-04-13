@@ -72,10 +72,8 @@
    在项目的build.gradle配置文件的顶部加入：
    
     subprojects {
-    
-           apply from: "${project.rootDir}/你创建的gradle配置文件的名称"
-           
-              }
+         apply from: "${project.rootDir}/你创建的gradle配置文件的名称"
+           }
                            
 4.
    添加依赖implementation 'com.github.qinyangQY:QyUi:v'
@@ -83,10 +81,9 @@
    
 5. 需要统一所有的依赖库的版本号,具体的build.gradle的配置如下可直接复制：
 
-
        apply plugin: 'com.android.application'
 
-       android {
+          android {
                 compileSdkVersion project.ext.compileSdkVersion
                 buildToolsVersion project.ext.buildToolsVersion
 
@@ -107,8 +104,8 @@
                    }
                }
                
-          //强制让所有依赖保持一致
-             configurations.all {
+              //强制让所有依赖保持一致
+              configurations.all {
                  resolutionStrategy.eachDependency { DependencyResolveDetails details ->
                  def requested = details.requested
                  if (requested.group == 'com.android.support') {
@@ -117,13 +114,13 @@
                         }
                     }
                 }
-            }
+             }
 
-            compileOptions {
+             compileOptions {
             sourceCompatibility JavaVersion.VERSION_1_8
             targetCompatibility JavaVersion.VERSION_1_8
            }
-       }
+        }
 
          dependencies {
          implementation fileTree(dir: 'libs', include: ['*.jar'])
