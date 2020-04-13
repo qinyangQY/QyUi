@@ -1,6 +1,9 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 group 'com.github.qinyangQY'
+// 定义两个链接，下面会用到。
+def siteUrl = 'https://github.com/qinyangQY/QyUi' // 项目主页。
+def gitUrl = 'https://github.com/qinyangQY/QyUi.git' // Git仓库的url。
 android {
     compileSdkVersion project.ext.compileSdkVersion
     buildToolsVersion project.ext.buildToolsVersion
@@ -20,7 +23,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
 }
 
 dependencies {
@@ -35,7 +37,6 @@ dependencies {
     implementation "com.github.LuckSiege.PictureSelector:picture_library:${project.ext.picture_library}"
     implementation "com.google.code.gson:gson:${project.ext.gson}"
     implementation "com.wang.avi:library:${project.ext.avi}"
-
     implementation "com.squareup.retrofit2:retrofit:${project.ext.retrofit}"
     implementation "com.squareup.retrofit2:converter-gson:${project.ext.convertergson}"
     implementation "io.reactivex.rxjava2:rxandroid:${project.ext.rxandroid}"
@@ -43,4 +44,42 @@ dependencies {
     implementation "com.squareup.retrofit2:adapter-rxjava2:${project.ext.adapterrxjava}"
     implementation "org.greenrobot:eventbus:${project.ext.eventbus}"
     implementation "com.squareup.okhttp3:logging-interceptor:${project.ext.logging_interceptor}"
+}
+install {
+    repositories.mavenInstaller {
+        // 生成pom.xml和参数
+        pom {
+            project {
+                packaging 'aar'
+                // 项目描述，复制我的话，这里需要修改。
+                name 'qyui'// 可选，项目名称。
+                description '这是一个安卓项目基础库'// 可选，项目描述。
+                url siteUrl // 项目主页，这里是引用上面定义好。
+
+                // 软件开源协议，现在一般都是Apache License2.0吧，复制我的，这里不需要修改。
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+
+                //填写开发者基本信息，复制我的，这里需要修改。
+                developers {
+                    developer {
+                        id 'qinyang' // 开发者的id。
+                        name '秦洋' // 开发者名字。
+                        email '[563281908@qq.com]' // 开发者邮箱。
+                    }
+                }
+
+                // SCM，复制我的，这里不需要修改。
+                scm {
+                    connection gitUrl // Git仓库地址。
+                    developerConnection gitUrl // Git仓库地址。
+                    url siteUrl // 项目主页。
+                }
+            }
+        }
+    }
 }
