@@ -24,7 +24,7 @@ public class QyPermissionTipsDialog extends QyBaseFragmentDialog {
     @Override
     public void onBindView(QyViewHolder viewHolder) {
         setCancelable(false);
-        viewHolder.setOnClickLisener(new View.OnClickListener() {
+        viewHolder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dismiss();

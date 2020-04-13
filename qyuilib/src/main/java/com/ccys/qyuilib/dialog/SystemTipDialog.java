@@ -35,14 +35,14 @@ public class SystemTipDialog extends QyBaseDialog{
               holder.setText(R.id.tv_dialog_title,title);
           }
         holder.setText(R.id.tv_content,content);
-          holder.setOnClickLisener(R.id.tv_cancel, new View.OnClickListener() {
+          holder.setOnClickListener(R.id.tv_cancel, new View.OnClickListener() {
               @Override
               public void onClick(View v) {
                   dismiss();
                   onEventListener.onCancel();
               }
           });
-          holder.setOnClickLisener(R.id.tv_confirm, new View.OnClickListener() {
+          holder.setOnClickListener(R.id.tv_confirm, new View.OnClickListener() {
               @Override
               public void onClick(View v) {
                   dismiss();

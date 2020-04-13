@@ -7,6 +7,8 @@ import com.ccys.qyuilib.util.AppUtil;
 
 import java.util.HashMap;
 
+import okhttp3.Interceptor;
+
 public class NetWorkManager extends QyNetworkManager {
     private static volatile NetWorkManager instance;
     private NetWorkManager(Context context) {
@@ -81,6 +83,11 @@ public class NetWorkManager extends QyNetworkManager {
 
     @Override
     protected String accountFrozenAction() {
+        return null;
+    }
+
+    @Override
+    protected Interceptor getLogInterceptor() {
         return null;
     }
 }

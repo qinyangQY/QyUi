@@ -35,7 +35,7 @@ public class SystemConfirmDialog extends QyBaseDialog{
             holder.setText(R.id.tv_dialog_title,title);
          }
         holder.setText(R.id.tv_content,content);
-         holder.setOnClickLisener(R.id.tv_confirm, new View.OnClickListener() {
+         holder.setOnClickListener(R.id.tv_confirm, new View.OnClickListener() {
              @Override
              public void onClick(View v) {
                  dismiss();

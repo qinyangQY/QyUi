@@ -181,7 +181,7 @@ public class CallPhoneDialog extends QyBaseDialog {
     public void onBindView(QyViewHolder viewHolder) {
         viewHolder.setText(R.id.tv_dialog_title, TextUtils.isEmpty(title) ? "拨打电话" : title);
         viewHolder.setText(R.id.tv_content, TextUtils.isEmpty(tip) ? phone : tip + phone);
-        viewHolder.setOnClickLisener(R.id.tv_cancel, new View.OnClickListener() {
+        viewHolder.setOnClickListener(R.id.tv_cancel, new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 CallPhoneDialog.this.dismiss();
@@ -190,7 +190,7 @@ public class CallPhoneDialog extends QyBaseDialog {
                 }
             }
         });
-        viewHolder.setOnClickLisener(R.id.tv_confirm, new View.OnClickListener() {
+        viewHolder.setOnClickListener(R.id.tv_confirm, new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 CallPhoneDialog.this.dismiss();
