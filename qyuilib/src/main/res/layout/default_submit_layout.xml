@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00FFFFFF"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/default_load_bg"
+        android:layout_centerInParent="true"
+        android:padding="@dimen/dp_10"
+        >
+        <com.ccys.qyuilib.view.SubmitStatusView
+            android:id="@+id/submit_view"
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_60"
+            app:qy_submit_status_progress_color="@color/colorWhite"
+            app:qy_submit_status_progress_width="@dimen/dp_4"
+            android:layout_gravity="center_horizontal"
+            />
+        <TextView
+            android:id="@+id/tv_submit_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="处理中请稍后..."
+            android:textColor="@color/colorWhite"
+            android:layout_marginTop="@dimen/dp_10"
+            />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">QyUiLib</string>
+    <string name="permission_tips_title_txt">系统提示</string>
+    <string name="permission_tips_content_txt">请打开必要权限，否则无法进行后续操作</string>
+    <string name="not_data_tip">没有数据</string>
+    <string name="error_tip">服务器开小差了</string>
+    <string name="network_error_tip">没有网络</string>
+</resources>

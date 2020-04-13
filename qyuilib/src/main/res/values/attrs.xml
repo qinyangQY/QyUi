@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="QyRecyclerView">
+        <attr name="viewType">
+            <enum name="vertical" value="1"></enum>
+            <enum name="horizontal" value="2"></enum>
+            <enum name="grid" value="3"></enum>
+            <enum name="waterfall" value="4"></enum>
+        </attr>
+        <attr name="isNest" format="boolean"/>
+        <attr name="rowCount" format="integer"/>
+        <attr name="waterfallType">
+            <enum name="vertical" value="1"></enum>
+            <enum name="horizontal" value="2"></enum>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="QyImageView">
+        <attr name="isCircular" format="boolean"/>
+        <attr name="radius" format="dimension"/>
+    </declare-styleable>
+    <declare-styleable name="SubmitStatusView">
+        <attr name="qy_submit_status_progress_width" format="dimension"/>
+        <attr name="qy_submit_status_progress_color" format="color"/>
+        <attr name="qy_submit_status_default_size" format="dimension"/>
+    </declare-styleable>
+</resources>

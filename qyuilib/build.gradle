@@ -1,0 +1,45 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion project.ext.compileSdkVersion
+    buildToolsVersion project.ext.buildToolsVersion
+
+
+    defaultConfig {
+        minSdkVersion project.ext.minSdkVersion
+        targetSdkVersion project.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "androidx.appcompat:appcompat:${project.ext.androidx_appcompat}"
+    implementation "androidx.constraintlayout:constraintlayout:${project.ext.constraintlayout}"
+    implementation "com.github.bumptech.glide:glide:${project.ext.glide}"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    annotationProcessor "com.github.bumptech.glide:compiler:${project.ext.glide}"
+    implementation "androidx.recyclerview:recyclerview:${project.ext.recyclerview}"
+    implementation "com.github.LuckSiege.PictureSelector:picture_library:${project.ext.picture_library}"
+    implementation "com.google.code.gson:gson:${project.ext.gson}"
+    implementation "com.wang.avi:library:${project.ext.avi}"
+
+    implementation "com.squareup.retrofit2:retrofit:${project.ext.retrofit}"
+    implementation "com.squareup.retrofit2:converter-gson:${project.ext.convertergson}"
+    implementation "io.reactivex.rxjava2:rxandroid:${project.ext.rxandroid}"
+    implementation "io.reactivex.rxjava2:rxjava:${project.ext.rxjava}"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:${project.ext.adapterrxjava}"
+    implementation "org.greenrobot:eventbus:${project.ext.eventbus}"
+    implementation "com.squareup.okhttp3:logging-interceptor:${project.ext.logging_interceptor}"
+}

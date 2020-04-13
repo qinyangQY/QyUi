@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorAppContentBg"
+    >
+   <RelativeLayout
+       android:id="@+id/re_title"
+       android:layout_width="match_parent"
+       android:layout_height="@dimen/dp_48"
+       android:background="@color/colorAppTheme"
+       >
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="这是标题"
+           android:gravity="center"
+           android:layout_centerInParent="true"
+           />
+   </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_select"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_30"
+        android:background="@color/colorAppTheme"
+        android:gravity="center"
+        android:text="选图片"
+        android:textColor="#ffffff" />
+    <TextView
+        android:id="@+id/tv_submit"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_30"
+        android:background="@color/colorAppTheme"
+        android:gravity="center"
+        android:text="提交意见反馈"
+        android:textColor="#ffffff" />
+    <TextView
+        android:id="@+id/tv_start"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_30"
+        android:background="@color/colorAppTheme"
+        android:gravity="center"
+        android:text="启动广播"
+        android:textColor="#ffffff" />
+</LinearLayout>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="qy_normal_dialog" parent="@android:style/Theme.Dialog">
+
+        <item name="android:windowFrame">@null</item>
+
+        <item name="android:windowNoTitle">true</item>
+
+        <item name="android:windowBackground">@android:color/transparent</item>
+
+        <item name="android:windowIsFloating">true</item>
+
+        <item name="android:windowContentOverlay">@null</item>
+
+        <item name="android:backgroundDimEnabled">true</item>
+
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+    <style name="QyAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorAccent</item>
+        <item name="colorPrimaryDark">@color/colorAccent</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+    </style>
+    <style name="QyPulseAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowBackground">#00ffffff</item>
+    </style>
+    <style name="show_image_dialog" parent="@android:style/Theme.Dialog">
+        <!--  Dialog的windowFrame框为无  -->
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowFullscreen">true</item>
+        <!--  是否显示title  -->
+        <item name="android:windowNoTitle">true</item>
+        <!--  设置dialog的背景色  -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--  是否浮现在activity之上  -->
+        <item name="android:windowIsFloating">true</item>
+        <!--  对话框是否有遮盖  -->
+        <item name="android:windowContentOverlay">@null</item>
+        <!--   背景是否模糊显示  -->
+        <item name="android:backgroundDimEnabled">false</item>
+
+        <item name="android:windowTranslucentNavigation">false</item>
+
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+    <style name="bottom_dialog" parent="@android:style/Theme.Dialog">
+        <!--  Dialog的windowFrame框为无  -->
+        <item name="android:windowFrame">@null</item>
+        <!--  是否显示title  -->
+        <item name="android:windowNoTitle">true</item>
+        <!--  设置dialog的背景色  -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--  是否浮现在activity之上  -->
+        <item name="android:windowIsFloating">true</item>
+        <!--  对话框是否有遮盖  -->
+        <item name="android:windowContentOverlay">@null</item>
+        <!--   背景是否模糊显示  -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!--  动画 -->
+        <item name="android:windowAnimationStyle">@style/animBottom</item>
+    </style>
+    <style name="animBottom" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/push_bottom_out</item>
+    </style>
+    <style name="animTop" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/push_top_in</item>
+        <item name="android:windowExitAnimation">@anim/push_top_out</item>
+    </style>
+    <style name="animAlpha">
+        <item name="android:windowEnterAnimation">@anim/push_alpha_in</item>
+        <item name="android:windowExitAnimation">@anim/push_alpha_out</item>
+    </style>
+    <style name="alpha_dialog" parent="@android:style/Theme.Dialog">
+        <!--  Dialog的windowFrame框为无  -->
+        <item name="android:windowFrame">@null</item>
+        <!--  是否显示title  -->
+        <item name="android:windowNoTitle">true</item>
+        <!--  设置dialog的背景色  -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--  是否浮现在activity之上  -->
+        <item name="android:windowIsFloating">true</item>
+        <!--  对话框是否有遮盖  -->
+        <item name="android:windowContentOverlay">@null</item>
+        <!--   背景是否模糊显示  -->
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <!--  动画 -->
+        <item name="android:windowAnimationStyle">@style/animAlpha</item>
+    </style>
+    <style name="offline_dialog" parent="Theme.AppCompat.Dialog.Alert">
+        <!--  Dialog的windowFrame框为无  -->
+        <item name="android:windowFrame">@null</item>
+        <!--  是否显示title  -->
+        <item name="windowNoTitle">true</item>
+        <!--  设置dialog的背景色  -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="windowActionBar">false</item>
+        <!--  是否浮现在activity之上  -->
+        <item name="android:windowIsFloating">true</item>
+        <!--  对话框是否有遮盖  -->
+        <item name="android:windowContentOverlay">@null</item>
+        <!--   背景是否模糊显示  -->
+        <item name="android:backgroundDimEnabled">true</item>
+
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+</resources>
