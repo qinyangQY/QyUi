@@ -4,64 +4,131 @@
 这是一个创建安卓基础项目的框架
 
 #### 软件架构
-当前最新版本是1.0.2
+当前最新版本是v = 1.0.2
 
 
 #### 安装教程
 
 1.   
-   repositories {
-        google()
-        jcenter()
-        maven { url 'https://jitpack.io' }
-    }
-2. implementation 'com.github.qinyangQY:QyUi:1.0.2'
-3. 需要统一所有的依赖库的版本号,具体的build.gradle的配置如下可直接复制：
-    apply plugin: 'com.android.application'
+   添加仓库:
+   
+    repositories {
+           google()
+           jcenter()
+           maven { url 'https://jitpack.io' }
+           }
+           
+2. 
+   在项目更目录下创建gradle配置文件 例如创建一个qyconfig.gradle文件将下面的内容复制即可
+   
+          project.ext {
 
-android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.3"
+                 javaVersion = 8
+                 javaMaxHeapSize = '4G'
 
-    defaultConfig {
-        applicationId "xxxxx"
-        minSdkVersion 21
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
-        consumerProguardFiles 'consumer-rules.pro'
-        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
-    }
+                 compileSdkVersion = 29
+                 buildToolsVersion = "29.0.3"
+                 minSdkVersion = 21
+                 targetSdkVersion = 29
+                 constraintlayout = "1.1.3"
+                 androidx_appcompat = "1.0.2"
 
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
-    //强制让所有依赖保持一致
-    configurations.all {
-        resolutionStrategy.eachDependency { DependencyResolveDetails details ->
-            def requested = details.requested
-            if (requested.group == 'com.android.support') {
-                if (!requested.name.startsWith("multidex")) {
-                    details.useVersion "${qyconfig.androidSupportVersion}"
+                 minifyEnable = true
+                 shrinkResEnable = minifyEnable
+
+                 sourceCompatibility = this.&getJavaVersion()
+                 targetCompatibility = this.&getJavaVersion()
+
+                 glide = "4.10.0"
+                 recyclerview = "1.2.0-alpha01"
+                 picture_library = "v2.4.6"
+                 gson = "2.6.2"
+                 avi = "2.1.3"
+
+                 retrofit = "2.6.2"
+                 convertergson = "2.4.0"
+                 rxandroid = "2.0.1"
+                 rxjava = "2.1.7"
+                 adapterrxjava = "2.3.0"
+                 logging_interceptor = "3.5.0"
+
+                 eventbus = "3.1.1"
+                }
+
+        def getJavaVersion() {
+                switch (project.ext.javaVersion) {
+                case "6":
+                return JavaVersion.VERSION_1_6
+                case "7":
+                return JavaVersion.VERSION_1_7
+                case "8":
+                return JavaVersion.VERSION_1_8
+                default:
+                return JavaVersion.VERSION_1_8
+              }
+       }
+
+3.
+   在项目的build.gradle配置文件的顶部加入：
+   
+    subprojects {
+    
+           apply from: "${project.rootDir}/你创建的gradle配置文件的名称"
+           
+              }
+                           
+4.
+   添加依赖implementation 'com.github.qinyangQY:QyUi:v'
+   v是最新版本号，最新版本号在上面
+   
+5. 需要统一所有的依赖库的版本号,具体的build.gradle的配置如下可直接复制：
+
+
+       apply plugin: 'com.android.application'
+
+       android {
+                compileSdkVersion project.ext.compileSdkVersion
+                buildToolsVersion project.ext.buildToolsVersion
+
+                defaultConfig {
+                applicationId "xxxx"
+                minSdkVersion project.ext.minSdkVersion
+                targetSdkVersion project.ext.targetSdkVersion
+                versionCode 1
+                versionName "1.0"
+                consumerProguardFiles 'consumer-rules.pro'
+                javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
+                }
+
+               buildTypes {
+               release {
+               minifyEnabled false
+               proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+                   }
+               }
+               
+          //强制让所有依赖保持一致
+             configurations.all {
+                 resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+                 def requested = details.requested
+                 if (requested.group == 'com.android.support') {
+                 if (!requested.name.startsWith("multidex")) {
+                      details.useVersion "${qyconfig.androidSupportVersion}"
+                        }
+                    }
                 }
             }
-        }
-    }
 
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-}
+            compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+           }
+       }
 
-dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.github.qinyangQY:QyUi:1.0.2'
-}
-
+         dependencies {
+         implementation fileTree(dir: 'libs', include: ['*.jar'])
+         implementation 'com.github.qinyangQY:QyUi:1.0.2'
+       }
 #### 使用说明
 
 1. xxxx
