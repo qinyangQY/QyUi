@@ -13,7 +13,6 @@ bin/
 gen/
 
 # Gradle files
-.gradle/
 build/
 .idea/
 
@@ -26,7 +25,6 @@ proguard/
 #Log Files
 *.log
 *.iml
-.gradle
 /local.properties
 /.idea/caches
 /.idea/libraries
@@ -42,5 +40,3 @@ proguard/
 .idea
 .DS_Store
 /release
-/gradle
-
