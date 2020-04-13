@@ -15,6 +15,7 @@ android {
         versionCode 1
         versionName "1.0"
         consumerProguardFiles 'consumer-rules.pro'
+        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
     }
 
     buildTypes {
@@ -27,23 +28,23 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "androidx.appcompat:appcompat:${project.ext.androidx_appcompat}"
-    implementation "androidx.constraintlayout:constraintlayout:${project.ext.constraintlayout}"
-    implementation "com.github.bumptech.glide:glide:${project.ext.glide}"
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    annotationProcessor "com.github.bumptech.glide:compiler:${project.ext.glide}"
-    implementation "androidx.recyclerview:recyclerview:${project.ext.recyclerview}"
-    implementation "com.github.LuckSiege.PictureSelector:picture_library:${project.ext.picture_library}"
-    implementation "com.google.code.gson:gson:${project.ext.gson}"
-    implementation "com.wang.avi:library:${project.ext.avi}"
-    implementation "com.squareup.retrofit2:retrofit:${project.ext.retrofit}"
-    implementation "com.squareup.retrofit2:converter-gson:${project.ext.convertergson}"
-    implementation "io.reactivex.rxjava2:rxandroid:${project.ext.rxandroid}"
-    implementation "io.reactivex.rxjava2:rxjava:${project.ext.rxjava}"
-    implementation "com.squareup.retrofit2:adapter-rxjava2:${project.ext.adapterrxjava}"
-    implementation "org.greenrobot:eventbus:${project.ext.eventbus}"
-    implementation "com.squareup.okhttp3:logging-interceptor:${project.ext.logging_interceptor}"
+    api "androidx.appcompat:appcompat:${project.ext.androidx_appcompat}"
+    api "androidx.constraintlayout:constraintlayout:${project.ext.constraintlayout}"
+    api "com.github.bumptech.glide:glide:${project.ext.glide}"
+    api 'androidx.appcompat:appcompat:1.1.0'
+    api 'androidx.constraintlayout:constraintlayout:1.1.3'
+    api "com.github.bumptech.glide:compiler:${project.ext.glide}"
+    api "androidx.recyclerview:recyclerview:${project.ext.recyclerview}"
+    api "com.github.LuckSiege.PictureSelector:picture_library:${project.ext.picture_library}"
+    api "com.google.code.gson:gson:${project.ext.gson}"
+    api "com.wang.avi:library:${project.ext.avi}"
+    api "com.squareup.retrofit2:retrofit:${project.ext.retrofit}"
+    api "com.squareup.retrofit2:converter-gson:${project.ext.convertergson}"
+    api "io.reactivex.rxjava2:rxandroid:${project.ext.rxandroid}"
+    api "io.reactivex.rxjava2:rxjava:${project.ext.rxjava}"
+    api "com.squareup.retrofit2:adapter-rxjava2:${project.ext.adapterrxjava}"
+    api "org.greenrobot:eventbus:${project.ext.eventbus}"
+    api "com.squareup.okhttp3:logging-interceptor:${project.ext.logging_interceptor}"
 }
 install {
     repositories.mavenInstaller {
